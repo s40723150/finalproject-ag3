@@ -1,49 +1,115 @@
-<h1>Introduction</h1>
-<p>Leader: <a href="https://mdecp2018.github.io/site-s40723145">40723145</a>(期中自評成績:80)</p>
-<p>Member: <a href="https://mdecp2018.github.io/site-s40723112">40723112</a>(期中自評成績:63)</p>
-<p>                <a href="https://mdecp2018.github.io/site-s40723120">40723120</a>(期中自評成績:75)</p>
-<p>                <a href="https://mdecp2018.github.io/site-s40723144">40723144</a>(期中自評成績:75)</p>
-<p>                <a href="https://mdecp2018.github.io/site-s40723147">40723147</a>(期中自評成績:80)</p>
-<p>                <a href="https://mdecp2018.github.io/site-s40723150">40723150</a>(期中自評成績:80)</p>
-<p></p>
-<p>本倉儲位於:  <a href="https://github.com/mdecp2018/finalproject-ag3">https://github.com/mdecp2018/finalproject-ag3</a> </p>
-<p></p>
-<h1>Topic</h1>
-<h1>Python 語法</h1>
+<!doctype html>
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>Python-Course</title> <link rel="stylesheet" type="text/css" href="./../static/cmsimply.css">
+
+<script type="text/javascript" src="./../static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCSharp.js"></script>
+<link type="text/css" rel="stylesheet" href="./../static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<!-- for LaTeX equations 暫時不用
+<script src="https://scrum-3.github.io/web/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+-->
+<!-- 暫時不用
+<script src="./../static/fengari-web.js"></script>
+<script type="text/javascript" src="./../static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.red3border {
+    border: 3px solid red;
+}
+.black3border {
+    border: 3px solid black;
+}
+</style>
+
+<script src="./../static/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+    $("ul.topmenu> li:has(ul) > a").append('<div class="arrow-right"></div>');
+    $("ul.topmenu > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
+});
+</script>
+
+</head><header><h1>2018 Fall demo 期末分組網站-ag3</h1> <confmenu>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="sitemap.html">Site Map</a></li>
+<li><a href="./../reveal/index.html">reveal</a></li>
+<li><a href="./../blog/index.html">blog</a></li>
+
+</ul>
+</confmenu></header>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><li><a href='Introduction.html'>Introduction</a><li><a href='Topic.html'>Topic</a><li><a href='Python 語法.html'>Python 語法</a><li><a href='Experience.html'>Experience</a><li><a href='Attendance rate.html'>Attendance rate</a></li></ul></nav><section>Topic << <a href='Topic.html'>Previous</a> <a href='Experience.html'>Next</a> >> Experience<br /><h1>Python 語法</h1>
 <p>Python 3 官方教材: <a href="https://docs.python.org/3/index.html">https://docs.python.org/3/index.html</a> </p>
 <p>Python tutorial: <a href="https://docs.python.org/3/tutorial/index.html">https://docs.python.org/3/tutorial/index.html</a> (英文)</p>
 <p>Python 教學: <a href="https://python-doc-tw.github.io/tutorial/index.html">https://python-doc-tw.github.io/tutorial/index.html</a> </p>
 <p>網頁上的 Python - Brython: <a href="https://www.brython.info/static_doc/en/intro.html">https://www.brython.info/static_doc/en/intro.html</a>  (解譯式)</p>
 <p>網頁上的 Python GUI- Flexx: <a href="https://flexx.readthedocs.io/en/stable/">https://flexx.readthedocs.io/en/stable/</a> (轉譯式)</p>
 <p>
-<script src="/static/brython.js"></script>
-<script src="/static/brython_stdlib.js"></script>
+<script src="./../static/brython.js"></script>
+<script src="./../static/brython_stdlib.js"></script>
 <!-- for ggame -->
-<script src="/static/jquery-3.3.1.min.js"></script>
-<script src="/static/jquery-ui.1.12.1.min.js"></script>
-<script src="/static/pixi-3.0.5.min.js"></script>
-<script src="/static/buzz-1.2.1.js"></script>
+<script src="./../static/jquery-3.3.1.min.js"></script>
+<script src="./../static/jquery-ui.1.12.1.min.js"></script>
+<script src="./../static/pixi-3.0.5.min.js"></script>
+<script src="./../static/buzz-1.2.1.js"></script>
 <!-- Cango 程式庫 -->
-<script src="/static/Cango-13v08-min.js"></script>
-<script src="/static/CangoAxes-4v01-min.js"></script>
-<script src="/static/gearUtils-05.js"></script>
+<script src="./../static/Cango-13v08-min.js"></script>
+<script src="./../static/CangoAxes-4v01-min.js"></script>
+<script src="./../static/gearUtils-05.js"></script>
 <script>
 window.onload=function(){
-brython({debug:1, pythonpath:['/static/']});
+brython({debug:1, pythonpath:['./../static/']});
 }
 </script>
 </p>
 <p><!-- 導入 FileSaver 與 filereader --></p>
 <p>
-<script src="/static/ace/FileSaver.min.js" type="text/javascript"></script>
-<script src="/static/ace/filereader.js" type="text/javascript"></script>
+<script src="./../static/ace/FileSaver.min.js" type="text/javascript"></script>
+<script src="./../static/ace/filereader.js" type="text/javascript"></script>
 </p>
 <p><!-- 導入 ace --></p>
 <p>
-<script src="/static/ace/ace.js" type="text/javascript"></script>
-<script src="/static/ace/ext-language_tools.js" type="text/javascript"></script>
-<script src="/static/ace/mode-python3.js" type="text/javascript"></script>
-<script src="/static/ace/snippets/python.js" type="text/javascript"></script>
+<script src="./../static/ace/ace.js" type="text/javascript"></script>
+<script src="./../static/ace/ext-language_tools.js" type="text/javascript"></script>
+<script src="./../static/ace/mode-python3.js" type="text/javascript"></script>
+<script src="./../static/ace/snippets/python.js" type="text/javascript"></script>
 </p>
 <p><!-- 請注意, 這裡使用 Javascript 將 localStorage["py_src"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
 <p>
@@ -730,7 +796,7 @@ brython_div <= graphics_column
 
 class Bunny(Sprite):
     
-    asset = ImageAsset("/images/bunny.png")
+    asset = ImageAsset("./../images/bunny.png")
     
     def __init__(self, position):
         super().__init__(Bunny.asset, position)
@@ -990,5 +1056,4 @@ doc["temp"].bind('click', Temp.prog)
 </p>
 <!-- temp convert ends -->
 <p><button id="keyword">Keyword</button><button id="ex1">Ex1</button><button id="ex2">Ex2</button><button id="ex3">Ex3</button><button id="ex4">Ex4</button><button id="temp">Temp</button><button id="draw">Draw</button><button id="flag">Flag</button><button id="bunny">Bunny</button><button id="spur">Spur</button><button id="clear">Clear</button></p>
-<h1>Experience</h1>
-<h1>Attendance rate</h1>
+<br />Topic << <a href='Topic.html'>Previous</a> <a href='Experience.html'>Next</a> >> Experience</section></div></body></html>
