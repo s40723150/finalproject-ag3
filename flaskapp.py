@@ -406,8 +406,7 @@ def editorfoot():
 
 def editorhead():
     return '''
-    <br />
-<!--<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>-->
+<br />
 <script src="/static/tinymce4/tinymce/tinymce.min.js"></script>
 <script src="/static/tinymce4/tinymce/plugins/sh4tinymce/plugin.min.js"></script>
 <link rel = "stylesheet" href = "/static/tinymce4/tinymce/plugins/sh4tinymce/style/style.css">
@@ -418,7 +417,7 @@ tinymce.init({
   element_format : "html",
   language : "en",
   valid_elements : '*[*]',
-  extended_valid_elements: "script[language|type|src]",
+  extended_valid_elements: "script[language|type|src|id]",
   plugins: [
     'advlist autolink lists link image charmap print preview hr anchor pagebreak',
     'searchreplace wordcount visualblocks visualchars code fullscreen',
@@ -826,6 +825,10 @@ def get_page2(heading, head, edit):
     # 直接在此將 /images/ 換為 ./../images/, /downloads/ 換為 ./../downloads/, 以 content 為基準的相對目錄設定
     page = [w.replace('/images/', './../images/') for w in page]
     page = [w.replace('/downloads/', './../downloads/') for w in page]
+    # 假如有 src="/static/ace/則換為 src="./../static/ace/
+    page = [w.replace('src="/static/', 'src="./../static/') for w in page]
+    # 假如有 pythonpath:['/static/'] 則換為 pythonpath:['./../static/']
+    page = [w.replace("pythonpath:['/static/']", "pythonpath:['./../static/']") for w in page]
     directory = render_menu2(head, level, page)
     if heading is None:
         heading = head[0]
@@ -1186,7 +1189,9 @@ return 'images/';
 def index():
     head, level, page = parse_content()
     # fix first Chinese heading error
-    return redirect("/get_page/" + urllib.parse.quote_plus(head[0]))
+    # 2018.12.13, 將空白轉為"+" 號, 會導致連線錯誤, 改為直接取頁面標題
+    #return redirect("/get_page/" + urllib.parse.quote_plus(head[0], encoding="utf-8"))
+    return redirect("/get_page/" + head[0])
     # the following will never execute
     directory = render_menu(head, level, page)
     if heading is None:
@@ -1785,7 +1790,7 @@ def set_admin_css():
     outstring = '''<!doctype html>
 <html><head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
-<title>期末分組專案</title> \
+<title>''' + init.Init.site_title + '''</title> \
 <link rel="stylesheet" type="text/css" href="/static/cmsimply.css">
 ''' + syntaxhighlight()
 
@@ -1836,7 +1841,7 @@ def set_css():
     outstring = '''<!doctype html>
 <html><head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
-<title>期末分組專案</title> \
+<title>''' + init.Init.site_title + '''</title> \
 <link rel="stylesheet" type="text/css" href="/static/cmsimply.css">
 ''' + syntaxhighlight()
 
@@ -1893,7 +1898,7 @@ def set_css2():
     outstring = '''<!doctype html>
 <html><head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
-<title>期末分組專案</title> \
+<title>''' + init.Init.site_title + '''</title> \
 <link rel="stylesheet" type="text/css" href="./../static/cmsimply.css">
 ''' + syntaxhighlight2()
 
@@ -2060,6 +2065,14 @@ def syntaxhighlight():
 <script src="https://scrum-3.github.io/web/brython/brython.js"></script>
 <script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
 -->
+<style>
+img.red3border {
+    border: 3px solid red;
+}
+.black3border {
+    border: 3px solid black;
+}
+</style>
 '''
 
 
@@ -2112,6 +2125,14 @@ init_mathjax();
 <script src="https://scrum-3.github.io/web/brython/brython.js"></script>
 <script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
 -->
+<style>
+img.red3border {
+    border: 3px solid red;
+}
+.black3border {
+    border: 3px solid black;
+}
+</style>
 '''
 
 
@@ -2155,5 +2176,33 @@ def unique(items):
     return keep
 
 
+@app.route('/edit_report')
+def edit_report():
+    head, level, page = parse_content()
+    directory = render_menu(head, level, page)
+    dir = "./report/markdown/paragraph"
+    outstring = ""
+    files = os.listdir(dir)
+    for i in range(len(files)):
+        outstring += "Edit: <a href='/do_edit_report/" + str(files[i]) +"'>" + str(files[i]) + "</a>"
+        outstring += "<br />"
+    #output = '<br />'.join(map(str, files))
+    return set_css() + "<div class='container'><nav>" + \
+             directory + "</nav><section>" + outstring + "</section></div></body></html>"
+
+@app.route('/do_edit_report/<file_name>')
+def do_edit_report(file_name):
+    if file_name is None:
+        pass
+    head, level, page = parse_content()
+    directory = render_menu(head, level, page)
+    dir = "./report/markdown/paragraph"
+    filename = dir + "/" + file_name
+    file_content = file_get_contents(filename)
+    outstring = ""
+    outstring += file_content
+    return set_css() + "<div class='container'><nav>" + \
+             directory + "</nav><section>" + outstring + "</section></div></body></html>"
+
 if __name__ == "__main__":
-    app.run()
+    app.run(host='127.0.0.1', port=8080, debug=True)
