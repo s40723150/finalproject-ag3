@@ -7,6 +7,1076 @@
 <p>                <a href="https://mdecp2018.github.io/site-s40723150">40723150</a>(期中自評成績:80)</p>
 <p></p>
 <p>本倉儲位於:  <a href="https://github.com/mdecp2018/finalproject-ag3">https://github.com/mdecp2018/finalproject-ag3</a> </p>
-<p></p><h1>Topic</h1>
+<p></p>
+<h1>Topic</h1>
+<h1>Python 語法</h1>
+<p>Python 3 官方教材: <a href="https://docs.python.org/3/index.html">https://docs.python.org/3/index.html</a> </p>
+<p>Python tutorial: <a href="https://docs.python.org/3/tutorial/index.html">https://docs.python.org/3/tutorial/index.html</a> (英文)</p>
+<p>Python 教學: <a href="https://python-doc-tw.github.io/tutorial/index.html">https://python-doc-tw.github.io/tutorial/index.html</a> </p>
+<p>網頁上的 Python - Brython: <a href="https://www.brython.info/static_doc/en/intro.html">https://www.brython.info/static_doc/en/intro.html</a>  (解譯式)</p>
+<p>網頁上的 Python GUI- Flexx: <a href="https://flexx.readthedocs.io/en/stable/">https://flexx.readthedocs.io/en/stable/</a> (轉譯式)</p>
+<p>
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+<!-- for ggame -->
+<script src="/static/jquery-3.3.1.min.js"></script>
+<script src="/static/jquery-ui.1.12.1.min.js"></script>
+<script src="/static/pixi-3.0.5.min.js"></script>
+<script src="/static/buzz-1.2.1.js"></script>
+<!-- Cango 程式庫 -->
+<script src="/static/Cango-13v08-min.js"></script>
+<script src="/static/CangoAxes-4v01-min.js"></script>
+<script src="/static/gearUtils-05.js"></script>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['/static/']});
+}
+</script>
+</p>
+<p><!-- 導入 FileSaver 與 filereader --></p>
+<p>
+<script src="/static/ace/FileSaver.min.js" type="text/javascript"></script>
+<script src="/static/ace/filereader.js" type="text/javascript"></script>
+</p>
+<p><!-- 導入 ace --></p>
+<p>
+<script src="/static/ace/ace.js" type="text/javascript"></script>
+<script src="/static/ace/ext-language_tools.js" type="text/javascript"></script>
+<script src="/static/ace/mode-python3.js" type="text/javascript"></script>
+<script src="/static/ace/snippets/python.js" type="text/javascript"></script>
+</p>
+<p><!-- 請注意, 這裡使用 Javascript 將 localStorage["py_src"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
+<p>
+<script type="text/javascript">
+function doSave(storage_id, filename){
+    var blob = new Blob([localStorage[storage_id]], {type: "text/plain;charset=utf-8"});
+    filename = document.getElementById(filename).value
+    saveAs(blob, filename+".py");
+}
+</script>
+</p>
+<h4>開始練習 print() 用法, 並著手建立函式</h4>
+<p><!-- 印出版次與關鍵字程式 --></p>
+<p>
+<script type="text/python3">
+from browser import document as doc
+import ace
+
+# Brython 3.3.4 內建的 container 名稱為  'container' 且 turtle 輸出為 svg 必須使用 div 訂定 id
+Ace = ace.Editor(editor_id="kw_editor", console_id="kw_console", container_id="kw__container", storage_id="kw_py_src" )
+
+Ace.editor.setValue("""# 導入 sys 模組
+import sys
+# 導入 keyword 模組
+import keyword
+
+def helloWorld():
+    print("Hello World!")
+
+helloWorld()
+
+# 利用 sys 模組中的 version_info 印出 Python 版次
+print("Python version: ", sys.version_info)
+# 利用 keyword 模組中的 kwlist 印出關鍵字
+print("Python keywords: ", keyword.kwlist)
+""")
+Ace.editor.scrollToRow(0)
+Ace.editor.gotoLine(0)
+
+# 執行程式, 顯示輸出結果與清除輸出結果及對應按鈕綁定
+doc['kw_run'].bind('click', Ace.run)
+doc['kw_show_console'].bind('click', Ace.show_console)
+doc['kw_clear_console'].bind('click', Ace.clear_console)
+</script>
+</p>
+<p><!-- 用來顯示程式碼的 editor 區域 --></p>
+<div id="kw_editor" style="width: 600px; height: 300px;"></div>
+<p><!-- 以下的表單與按鈕與前面的 Javascript doSave 函式以及 FileSaver.min.js 互相配合 --></p>
+<form><label>Filename: <input id="kw_filename" placeholder="input file name" type="text"/>.py</label> <input onclick="doSave('kw_py_src', 'kw_filename');" type="submit" value="Save"/></form>
+<p><button id="kw_run">Run</button> <button id="kw_show_console">Output</button> <button id="kw_clear_console">清除</button><button onclick="window.location.reload()">Reload</button></p>
+<div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console"></textarea></div>
+<div id="brython_div"></div>
+<p><!-- ****************************** keyword start -->
+<script type="text/python3">
+from browser import document as doc
+# 導入位於 static 目錄下的 beditor.py 
+import beditor
+# 利用 beditor.py 中的 editor 類別建立案例, 對應到 kw1
+kw1 = beditor.editor("""# 導入 sys 模組
+import sys
+# 導入 keyword 模組
+import keyword
+
+# 利用 sys 模組中的 version_info 印出 Python 版次
+print("Python version: ", sys.version_info)
+# 利用 keyword 模組中的 kwlist 印出關鍵字
+print("Python keywords: ", keyword.kwlist)
+""", "kw_editor", "kw_console", "kw__container", "kw_py_src")
+# id 為 "keyword" 的按鈕點按時, 執行 kw1 物件中的 prog 方法
+doc["keyword"].bind('click', kw1.prog)
+</script>
+</p>
+<p><!-- ****************************** keyword end --></p>
+<p><!-- ***************************** slide ex1 start --></p>
+<p>
+<script type="text/python3">
+from browser import document as doc
+import beditor
+Ex1 = beditor.editor("""# 導入 Ex1 原始碼
+a = 0
+def my_print(n, input_str):
+    print("以下將重覆列印 '", input_str + "' " + str(n) + "次")
+    for i in range(n):
+        print(i, input_str)
+
+my_print(5, "Hello World!")
+the_str = "開始學習 Python"
+num = input("請輸入要列印的次數!")
+my_print(int(num), the_str)
+a = a + 1
+print("(" + str(a) + ")", "_" * 25)
+
+def myfun():
+    yield 1
+    yield 2
+    yield 3
+
+for i in myfun():
+    print(i)
+
+x = iter(myfun())
+y = list(myfun())
+
+a = a + 1
+print("(" + str(a) + ")", "_" * 25)
+print(x.__next__())
+print(x.__next__())
+print(x.__next__())
+print(y)
+""", "kw_editor", "kw_console", "kw__container", "kw_py_src")
+# id 為 "ex1" 的按鈕點按時, 執行 Ex1 物件中的 prog 方法
+doc["ex1"].bind('click', Ex1.prog)
+</script>
+</p>
+<p><!-- ***************************** slide ex1 end --></p>
+<p><!-- ***************************** slide ex2 start --></p>
+<p>
+<script type="text/python3">
+from browser import document as doc
+import beditor
+Ex2 = beditor.editor("""# Python 的內建資料型別
+import math
+def f():
+    print("This is a user-defined function")
+    return 42
+
+print("Some basic types in Python:")
+print(type(2))           # int
+print(type(2.2))         # float
+print(type("2.2"))       # str  (string)
+print(type(2 < 2.2))     # bool (boolean)
+print(type(math))        # module
+print(type(math.tan))    # builtin_function_or_method ("function" in Brython)
+print(type(f))           # function (user-defined function)
+print(type(type(42)))    # type
+
+print("#####################################################")
+
+print("And some other types we will see later in the course...")
+print(type(Exception())) # Exception
+print(type(range(5)))    # range
+print(type([1,2,3]))     # list
+print(type((1,2,3)))     # tuple
+print(type({1,2}))       # set
+print(type({1:42}))      # dict (dictionary or map)
+print(type(2+3j))        # complex  (complex number) (we may not see this type)
+""", "kw_editor", "kw_console", "kw__container", "kw_py_src")
+# id 為 "ex2" 的按鈕點按時, 執行 Ex2 物件中的 prog 方法
+doc["ex2"].bind('click', Ex2.prog)
+</script>
+</p>
+<p><!-- ***************************** slide ex2 end --></p>
+<p><!-- ***************************** slide ex3 start --></p>
+<p>
+<script type="text/python3">
+from browser import document as doc
+import beditor
+Ex3 = beditor.editor("""# Python 的內建常數與函式
+# 內建常數
+print("Some builtin constants:")
+print(True)
+print(False)
+print(None)
+
+print("And some more constants in the math module:")
+import math
+print(math.pi)
+print(math.e)
+# 內建函式
+print("Type conversion functions:")
+print(bool(0))   # convert to boolean (True or False)
+print(float(42)) # convert to a floating point number
+print(int(2.8))  # convert to an integer (int)
+
+print("And some basic math functions:")
+print(abs(-5))   # absolute value
+print(max(2,3))  # return the max value
+print(min(2,3))  # return the min value
+print(pow(2,3))  # raise to the given power (pow(x,y) == x**y)
+print(round(2.354, 1)) # round with the given number of digits
+# other examples
+print(3 * 2)
+print(3 * "abc")
+print(3 + 2)
+print("abc" + "def")
+print(3 + "def")
+# Type Affect Semantics
+print(3 * 2)
+print(3 * "abc")
+print(3 + 2)
+print("abc" + "def")
+print(3 + "def")
+# Integer Division
+print("The / operator does 'normal' float division:")
+print(" 5/3  =", ( 5/3))
+print()
+print("The // operator does integer division:")
+print(" 5//3 =", ( 5//3))
+print(" 2//3 =", ( 2//3))
+print("-1//3 =", (-1//3))
+print("-4//3 =", (-4//3))
+# Modulus or Remainder Operator (%)
+print(" 6%3 =", ( 6%3))
+print(" 5%3 =", ( 5%3))
+print(" 2%3 =", ( 2%3))
+print(" 0%3 =", ( 0%3))
+print("-4%3 =", (-4%3))
+print(" 3%0 =", ( 3%0))
+# Verify that (a%b) is equivalent to (a-(a//b)*b)
+def mod(a, b):
+  return a - (a//b)*b
+print(41%14, mod(41,14))
+print(14%41, mod(14,41))
+print(-32%9, mod(-32,9))
+print(32%-9, mod(32,-9))
+# Operator Order (Precedence and Associativity)
+print("Precedence:")
+print(2+3*4)  # prints 14, not 20
+print(5+4%3)  # prints  6, not 0 (% has same precedence as *, /, and //)
+print(2**3*4) # prints 32, not 4096 (** has higher precedence than *, /, //, and %)
+
+print()
+
+print("Associativity:")
+print(5-4-3)   # prints -2, not 4 (- associates left-to-right)
+print(4**3**2) # prints 262144, not 4096 (** associates right-to-left)
+# Approximate Values of Floating-Point Numbers
+print(0.1 + 0.1 == 0.2)        # True, but...
+print(0.1 + 0.1 + 0.1 == 0.3)  # False!
+print(0.1 + 0.1 + 0.1)         # prints 0.30000000000000004 (uh oh)
+print((0.1 + 0.1 + 0.1) - 0.3) # prints 5.55111512313e-17 (tiny, but non-zero!)
+# Equality Testing with math.isclose
+print("The problem....")
+d1 = 0.1 + 0.1 + 0.1
+d2 = 0.3
+print(d1 == d2)                # False (never use == with floats!)
+
+print()
+print("The solution...")
+import math
+print(math.isclose(d1, d2))  # True!
+# math.isclose checks if the two numbers are ALMOST equal, within a small error
+# Short-Circuit Evaluation
+def yes():
+    return True
+
+def no():
+    return False
+
+def crash():
+    return 1/0 # crashes!
+
+print(no() and crash()) # Works!
+print(crash() and no()) # Crashes!
+print (yes() and crash()) # Never runs (due to crash), but would also crash (without short-circuiting)
+# Or operator
+def yes():
+    return True
+
+def no():
+    return False
+
+def crash():
+    return 1/0 # crashes!
+
+print(yes() or crash()) # Works!
+print(crash() or yes()) # Crashes!
+print(no() or crash())  # Never runs (due to crash), but would also crash (without short-circuiting)
+# more examples
+def isPositive(n):
+    result = (n > 0)
+    print("isPositive(",n,") =", result)
+    return result
+
+def isEven(n):
+    result = (n % 2 == 0)
+    print("isEven(",n,") =", result)
+    return result
+
+print("Test 1: isEven(-4) and isPositive(-4))")
+print(isEven(-4) and isPositive(-4)) # Calls both functions
+print("----------")
+print("Test 2: isEven(-3) and isPositive(-3)")
+print(isEven(-3) and isPositive(-3)) # Calls only one function!
+# type vs isinstance
+# Both type and isinstance can be used to type-check
+# In general, (isinstance(x, T)) will be more robust than (type(x) == T)
+
+print(type("abc") == str)
+print(isinstance("abc", str))
+
+# We'll see better reasons for this when we cover OOP + inheritance later
+# in the course.  For now, here is one reason:  say you wanted to check
+# if a value is any kind of number (int, float, complex, etc). 
+# You could do:
+
+def isNumber(x):
+    return ((type(x) == int) or
+            (type(x) == float)) # are we sure this is ALL kinds of numbers?
+
+print(isNumber(1), isNumber(1.1), isNumber(1+2j), isNumber("wow"))
+
+# But this is cleaner, and works for all kinds of numbers, including
+# complex numbers for example:
+
+import numbers
+def isNumber(x):
+    return isinstance(x, numbers.Number) # works for any kind of number
+
+print(isNumber(1), isNumber(1.1), isNumber(1+2j), isNumber("wow"))
+""", "kw_editor", "kw_console", "kw__container", "kw_py_src")
+# id 為 "ex3" 的按鈕點按時, 執行 Ex3 物件中的 prog 方法
+doc["ex3"].bind('click', Ex3.prog)
+</script>
+</p>
+<p><!-- ***************************** slide ex3 end --></p>
+<p><!-- ***************************** slide ex4 start --></p>
+<p>
+<script type="text/python3">
+from browser import document as doc
+import beditor
+Ex4 = beditor.editor("""# Python 函式
+# Vocabulary
+x = 5
+def f(y, z):
+    result = x + y + z
+    return result
+print(f(1, 2)) # 8
+print(f(3, 4)) # 12
+
+# Vocabulary:
+#   variables: global vs. local
+#   statements vs. expressions
+#   function definitions vs. function calls
+#   parameters vs. arguments
+
+# Return Statements
+# Basic example
+
+def isPositive(x):
+    return (x > 0)
+
+print(isPositive(5))  # True
+print(isPositive(-5)) # False
+print(isPositive(0))  # False
+
+# Return ends the function immediately
+def isPositive(x):
+    print("Hello!")   # runs
+    return (x > 0)
+    print("Goodbye!") # does not run ("dead code")
+
+print(isPositive(5))  # prints Hello, then True
+
+# No return statement --> return None
+def f(x):
+    x + 42
+
+print(f(5)) # None
+
+def f2(x):
+    result = x + 42
+
+print(f2(5)) # None
+
+# Print versus Return
+# This is a common early mistake (confusing print and return):
+def cubed(x):
+    print(x**3) # Here is the error!
+
+cubed(2)          # seems to work!
+print(cubed(3))   # sort of works (but prints None, which is weird)
+print(2*cubed(4)) # Error!
+
+# Once again (correctly)
+def cubed2(x):
+    return (x**3) # That's better!
+
+cubed2(2)          # seems to be ignored (why?)
+print(cubed2(3))   # works!
+print(2*cubed2(4)) # works!
+
+# Different Parameter and Return Types
+def hypotenuse(a, b):
+    return ((a**2) + (b**2))**0.5
+
+print(hypotenuse(3, 4)) # 5.0 (not 5)
+print("---------------------")
+
+def xor(b1, b2):
+    return ((b1 and (not b2)) or (b2 and (not b1)))  # same as (b1 != b2)
+
+print(xor(True,  True))  # False
+print(xor(True,  False)) # True
+print(xor(False, True))  # True
+print(xor(False, False)) # False
+print("---------------------")
+
+def isPositive(n):
+    return (n > 0)
+
+print(isPositive(10))     # True
+print(isPositive(-1.234)) # False
+
+# Function Composition
+def f(w):
+    return 10*w
+
+def g(x, y):
+    return f(3*x) + y
+
+def h(z):
+    return f(g(z, f(z+1)))
+
+print(h(1)) # hint: try the "visualize" feature
+
+# Helper Functions 
+def onesDigit(n):
+    return n%10
+
+def largerOnesDigit(x, y):
+    return max(onesDigit(x), onesDigit(y))
+
+print(largerOnesDigit(134, 672)) # 4
+print(largerOnesDigit(132, 674)) # Still 4
+
+# Test Functions
+# A broken test function
+def onesDigit(n):
+    return n%10
+
+def testOnesDigit():
+    print("Testing onesDigit()...", end="")
+    assert(onesDigit(5) == 5)
+    assert(onesDigit(123) == 3)
+    assert(onesDigit(100) == 0)
+    assert(onesDigit(999) == 9)
+    print("Passed!")
+
+testOnesDigit() # Passed!  Why is this bad?
+
+# A better version
+def onesDigit2(n):
+    return n%10
+
+def testOnesDigit2():
+    print("Testing onesDigit()...", end="")
+    assert(onesDigit2(5) == 5)
+    assert(onesDigit2(123) == 3)
+    assert(onesDigit2(100) == 0)
+    assert(onesDigit2(999) == 9)
+    assert(onesDigit2(-123) == 3) # Added this test
+    print("Passed!")
+
+testOnesDigit2() # Crashed!  So the test function worked!
+
+# Local Variable Scope
+def f(x):
+    print("In f, x =", x)
+    x += 5
+    return x
+
+def g(x):
+    return f(x*2) + f(x*3)
+
+print(g(2))
+
+# Another example
+def f(x):
+    print("In f, x =", x)
+    x += 7
+    return round(x / 3)
+
+def g(x):
+    x *= 10
+    return 2 * f(x)
+
+def h(x):
+    x += 3
+    return f(x+4) + g(x)
+
+print(h(f(1)))
+
+# Global Variable Scope
+# In general, you should avoid using global variables.
+# You will even lose style points if you use them!
+# Still, you need to understand how they work, since others
+# will use them, and there may also be some very few occasions
+# where you should use them, too!
+
+g = 100
+
+def f(x):
+    return x + g
+
+print(f(5)) # 105
+print(f(6)) # 106
+print(g)    # 100
+
+# Another exampl
+g = 100
+
+def f(x):
+    # If we modify a global variable, we must declare it as global.
+    # Otherwise, Python will assume it is a local variable.
+    global g
+    g += 1
+    return x + g
+
+print(f(5)) # 106
+print(f(6)) # 108
+print(g)    # 102
+
+# Default arguments
+# Sometimes, a function has a parameter that has a natural default
+# We can specify that default value in the function definition,
+# then choose whether or not to include it in the function call.
+
+def f(x, y=10):
+    return x + y
+
+print(f(5))   # 15
+print(f(5,1)) # 6
+""", "kw_editor", "kw_console", "kw__container", "kw_py_src")
+# id 為 "ex4" 的按鈕點按時, 執行 Ex4 物件中的 prog 方法
+doc["ex4"].bind('click', Ex4.prog)
+</script>
+</p>
+<p><!-- ***************************** slide ex4 end --></p>
+<!-- line drawing start -->
+<p>
+<script type="text/python3">
+from browser import document as doc
+import beditor
+Draw = beditor.editor("""# Line drawing
+# 導入 doc
+from browser import document as doc
+from browser import html
+import math
+canvas = html.CANVAS(width = 300, height = 200)
+canvas.id = "line_drawing"
+brython_div = doc["brython_div"]
+brython_div <= canvas
+
+# 準備繪圖畫布
+canvas = doc["line_drawing"]
+ctx = canvas.getContext("2d")
+# 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+# ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+# 以下採用 canvas 原始座標繪圖
+# 設定填圖顏色
+ctx.fillStyle = "rgb(200,0,0)"
+# 設定畫筆顏色
+ctx.strokeStyle = "rgb(0,0,200)"
+# 乘上 deg 可轉為徑度單位
+deg = math.pi / 180
+
+# 建立多邊形定點位置畫線函式
+def star(radius, xc, yc, n):
+    #radius = 100
+    #xc = 200
+    #yc = 200
+    xi = xc + radius*math.cos((360/n)*deg+90*deg)
+    yi = yc - radius*math.sin((360/n)*deg+90*deg)
+    ctx.beginPath()
+    ctx.moveTo(xi,yi)
+    for i in range(2, n+1):
+        x = xc + radius*math.cos((360/n)*deg*i+90*deg)
+        y = yc - radius*math.sin((360/n)*deg*i+90*deg)
+        ctx.lineTo(x,y)
+# 以下利用多邊形畫線函式呼叫執行畫框線或填入顏色
+# 畫五邊形框線
+star(50, 50, 50, 5)
+ctx.closePath()
+ctx.stroke()
+    
+# 填三角形色塊
+star(50, 150, 50, 3)
+ctx.closePath()
+ctx.fill()
+    
+# 改變畫線顏色後, 畫七邊形框線
+ctx.strokeStyle = "rgb(0,200,20)"
+star(50, 250, 50, 7)
+ctx.closePath()
+ctx.stroke()
+""", "kw_editor", "kw_console", "kw__container", "kw_py_src")
+# id 為 "draw" 的按鈕點按時, 執行 Draw 物件中的 prog 方法
+doc["draw"].bind('click', Draw.prog)
+</script>
+</p>
+<!-- line drawing ends -->
+<p></p>
+<!-- flag ex start -->
+<p>
+<script type="text/python3">
+from browser import document as doc
+import beditor
+Flag = beditor.editor("""# 畫中華民國國旗
+# 導入 doc
+from browser import document as doc
+from browser import html
+import math
+canvas = html.CANVAS(width = 300, height = 200)
+canvas.style = {"width": "100%"}
+canvas.id = "taiwan_flag"
+brython_div = doc["brython_div"]
+brython_div <= canvas
+
+# 準備繪圖畫布
+canvas = doc["taiwan_flag"]
+ctx = canvas.getContext("2d")
+# 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+# ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+# 以下採用 canvas 原始座標繪圖
+flag_w = canvas.width
+flag_h = canvas.height
+circle_x = flag_w/4
+circle_y = flag_h/4
+# 先畫滿地紅
+ctx.fillStyle='rgb(255, 0, 0)'
+ctx.fillRect(0,0,flag_w,flag_h)
+# 再畫青天
+ctx.fillStyle='rgb(0, 0, 150)'
+ctx.fillRect(0,0,flag_w/2,flag_h/2)
+# 畫十二道光芒白日
+ctx.beginPath()
+star_radius = flag_w/8
+angle = 0
+for i in range(24):
+    angle += 5*math.pi*2/12
+    toX = circle_x + math.cos(angle)*star_radius
+    toY = circle_y + math.sin(angle)*star_radius
+    # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
+    if (i):
+        ctx.lineTo(toX, toY)
+    else:
+        ctx.moveTo(toX, toY)
+ctx.closePath()
+# 將填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+# 白日:藍圈
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為藍色
+ctx.fillStyle = 'rgb(0, 0, 149)'
+ctx.fill()
+# 白日:白心
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+""", "kw_editor", "kw_console", "kw__container", "kw_py_src")
+# id 為 "flag" 的按鈕點按時, 執行 Flag 物件中的 prog 方法
+doc["flag"].bind('click', Flag.prog)
+</script>
+</p>
+<!-- flag ex ends -->
+<p></p>
+<!-- bunny start -->
+<p>
+<script type="text/python3">
+from browser import document as doc
+import beditor
+Bunny = beditor.editor("""# Ggame
+from ggame import App, ImageAsset, Sprite, MouseEvent
+from random import random, randint
+from browser import document as doc
+from browser import html
+import math
+# 建立內定名稱為 "ggame-canvas" 的 canvas 標註
+canvas = html.CANVAS(width = 600, height = 400)
+canvas.id = "ggame-canvas"
+brython_div = doc["brython_div"]
+brython_div <= canvas
+# 建立名稱為 graphics-column 且 1x1 大小的 div 標註
+graphics_column = html.DIV(width = 1, height = 1)
+graphics_column.id = "graphics-column"
+brython_div <= graphics_column
+
+class Bunny(Sprite):
+    
+    asset = ImageAsset("/images/bunny.png")
+    
+    def __init__(self, position):
+        super().__init__(Bunny.asset, position)
+        # register mouse events
+        App.listenMouseEvent(MouseEvent.mousedown, self.mousedown)
+        App.listenMouseEvent(MouseEvent.mouseup, self.mouseup)
+        App.listenMouseEvent(MouseEvent.mousemove, self.mousemove)
+        self.dragging = False
+
+    
+    def step(self):
+        # Every now and then a bunny hops...
+        if random() < 0.01:
+            self.x += randint(-20,20)
+            self.y += randint(-20,20)
+        
+        
+    def mousedown(self, event):
+        # capture any mouse down within 50 pixels
+        self.deltax = event.x - (self.x + self.width//2) 
+        self.deltay = event.y - (self.y + self.height//2)
+        if abs(self.deltax) < 50 and abs(self.deltay) < 50:
+            self.dragging = True
+            # only drag one bunny at a time - consume the event
+            event.consumed = True
+            
+    def mousemove(self, event):
+        if self.dragging:
+            self.x = event.x - self.deltax - self.width//2
+            self.y = event.y - self.deltay - self.height//2
+            event.consumed = True
+            
+    def mouseup(self, event):
+        if self.dragging:
+            self.dragging = False
+            event.consumed = True
+            
+        
+class DemoApp(App):
+    
+    def __init__(self):
+        super().__init__()
+        for i in range(20):
+            Bunny((randint(50, 600), randint(50, 400)))
+        
+    def step(self):
+        # Override step to perform action on each frame update
+        for bunny in self.spritelist:
+            bunny.step()
+
+
+# Create the app
+app = DemoApp()  
+# Run the app
+app.run()
+""", "kw_editor", "kw_console", "kw__container", "kw_py_src")
+# id 為 "bunny" 的按鈕點按時, 執行 Bunny 物件中的 prog 方法
+doc["bunny"].bind('click', Bunny.prog)
+</script>
+</p>
+<!-- bunny ends -->
+<p></p>
+<!-- clear canvas start -->
+<p>
+<script type="text/python3">
+from browser import document as doc
+import beditor
+Clear = beditor.editor("""# 清除畫布
+from browser import document, html
+brython_div = document["brython_div"] 
+brython_div.clear()
+""", "kw_editor", "kw_console", "kw__container", "kw_py_src")
+# id 為 "clear" 的按鈕點按時, 執行 Clear 物件中的 prog 方法
+doc["clear"].bind('click', Clear.prog)
+</script>
+</p>
+<!-- clear canvas ends -->
+<p></p>
+<!-- cango spur gears start -->
+<p>
+<script type="text/python3">
+from browser import document as doc
+import beditor
+Spur = beditor.editor("""# Cango Spur Gears
+from browser import document as doc
+from browser import html
+import math
+canvas = html.CANVAS(width = 600, height = 400)
+canvas.id = "cango_gear"
+brython_div = doc["brython_div"]
+brython_div <= canvas
+from browser import document as doc
+from browser import window
+import math
+
+canvas = doc["cango_gear"]
+# 此程式採用 Cango Javascript 程式庫繪圖, 因此無需 ctx
+#ctx = canvas.getContext("2d")
+cango = window.Cango.new
+# 針對變數的轉換, shapeDefs 在 Cango 中資料型別為變數, 可以透過 window 轉換
+shapedefs = window.shapeDefs
+shape = window.Shape.new
+path = window.Path.new
+creategeartooth = window.createGearTooth.new
+
+tweener = window.Tweener.new
+# 經由 Cango 轉換成 Brython 的 cango, 指定將圖畫在 id="cango_gear" 的 canvas 上
+cgo = cango("cango_gear")
+
+######################################
+# 畫正齒輪輪廓
+#####################################
+def cangoGear(n, m, pa):
+    # n 為齒數
+    #n = 17
+    # pa 為壓力角
+    #pa = 25
+    # m 為模數, 根據畫布的寬度, 計算適合的模數大小
+    # Module = mm of pitch diameter per tooth
+    #m = 0.8*canvas.width/n
+    # pr 為節圓半徑
+    pr = n*m/2 # gear Pitch radius
+    # generate gear
+    data = creategeartooth(m, n, pa)
+    # Brython 程式中的 print 會將資料印在 Browser 的 console 區
+    #print(data)
+    gearTooth = path(data, {
+      "fillColor":"#ddd0dd",
+      "border": True,
+      "strokeColor": "#606060" })
+    gearTooth.rotate(180/n) # rotate gear 1/2 tooth to mesh
+    # 單齒的齒形資料經過旋轉後, 將資料複製到 gear 物件中
+    gear = gearTooth.dup()
+    # gear 為單一齒的輪廓資料
+    #cgo.render(gearTooth)
+
+    # 利用單齒輪廓旋轉, 產生整個正齒輪外形
+    for i in range(1, n):
+        # 將 gearTooth 中的資料複製到 newTooth
+        newTooth = gearTooth.dup()
+        # 配合迴圈, newTooth 的齒形資料進行旋轉, 然後利用 appendPath 方法, 將資料併入 gear
+        newTooth.rotate(360*i/n)
+        gear.appendPath(newTooth)
+    # 建立軸孔
+    # add axle hole, hr 為 hole radius
+    hr = 0.6*pr # diameter of gear shaft
+    shaft = path(shapedefs.circle(hr), {
+      "fillColor":"#ddd0dd",
+      "border": True,
+      "strokeColor": "#606060" })
+    gear.appendPath(shaft) # retain the 'moveTo' command for shaft sub path
+    return gear
+
+# 設定兩齒齒數
+n1 = 17
+n2 = 11
+n3 = 13
+reduced_ratio = 0.5
+# 使用 80% 的畫布寬度
+m = 0.8*canvas.width/((n1+n2+n3)*reduced_ratio)
+# 設定共同的壓力角
+pa = 25
+# n 齒輪的節圓半徑
+pr1 = n1*m/2
+# n2 齒輪的節圓半徑
+pr2 = n2*m/2
+pr3 = n3*m/2
+
+cx = canvas.width/2
+cy = canvas.height/2
+# 建立 gears
+gear1 = cangoGear(n1, m, pa)
+gear2 = cangoGear(n2, m, pa)
+gear3 = cangoGear(n3, m, pa)
+
+from browser.timer import set_interval
+
+deg = math.pi/180
+rotate_speed = 12*deg
+
+def draw():
+    cgo.clearCanvas()
+    gear1.transform.translate(cx-(pr1+pr2)*reduced_ratio, cy)
+    gear1.transform.scale(reduced_ratio)
+    gear1.transform.rotate(0)
+    gear1.rotate(rotate_speed)
+    cgo.render(gear1)
+    
+    gear2.transform.translate(cx, cy)
+    gear2.transform.scale(reduced_ratio)
+    gear2.transform.rotate(180+(360/n2/2))
+    gear2.rotate(-(rotate_speed)*n1/n2)
+    cgo.render(gear2)
+    
+    gear3.transform.translate(cx+(pr2+pr3)*reduced_ratio, cy)
+    gear3.transform.scale(reduced_ratio)
+    gear3.transform.rotate(180+(360/n3/2)+(180+(360/n2/2))*n2/n3)
+    gear3.rotate((rotate_speed*n1/n2)*(n2/n3))
+    cgo.render(gear3)
+
+set_interval(draw, 2)
+""", "kw_editor", "kw_console", "kw__container", "kw_py_src")
+# id 為 "spur" 的按鈕點按時, 執行 Spur 物件中的 prog 方法
+doc["spur"].bind('click', Spur.prog)
+</script>
+</p>
+<!-- cango spur gears ends -->
+<p></p>
+<!-- temp convert start -->
+<p>
+<script type="text/python3">
+from browser import document as doc
+import beditor
+Temp = beditor.editor("""# Temperature Conversion
+# Temperature Conversion
+'''
+C to F: Celsius to Fahrenheit Conversion Formula. To convert temperatures in degrees Celsius to Fahrenheit, multiply by 1.8 (or 9/5) and add 32.
+
+To convert temperatures in degrees Fahrenheit to Celsius, subtract 32 and multiply by .5556 (or 5/9).
+
+Fahrenheit = Celsius*9/5 + 32
+
+Celsium = (Fahrenheit - 32)*5/9
+'''
+from browser import document, html
+brython_div = document["brython_div"]
+
+def c2f(c):
+    f = round(c*9/5 + 32, 3)
+    return "Celsiusc: "+ str(c) +         " degrees = Fahrenheit: " + str(f) + " degrees"
+    
+def f2c(f):
+    c = round((f - 32)*5/9, 3)
+    return "Fahrenheit: "+ str(f) +         " degrees = Celsiusc: " + str(c) + " degrees"
+    
+choice = input("c2f or f2c")
+if choice == "c2f":
+    '''
+    c = float(input("input Celsius in degrees"))
+    print(c2f(c))
+    '''
+    for deg in range(100):
+        brython_div <= c2f(deg)
+        brython_div <= html.BR()
+else:
+    '''
+    f = float(input("input Fahrenheit in degrees"))
+    print(f2c(f))
+    '''
+    for deg in range(100):
+        brython_div <= f2c(deg)
+        brython_div <= html.BR()
+""", "kw_editor", "kw_console", "kw__container", "kw_py_src")
+# id 為 "temp" 的按鈕點按時, 執行 Temp 物件中的 prog 方法
+doc["temp"].bind('click', Temp.prog)
+</script>
+</p>
+<!-- temp convert ends -->
+<p><button id="keyword">Keyword</button><button id="ex1">Ex1</button><button id="ex2">Ex2</button><button id="ex3">Ex3</button><button id="ex4">Ex4</button><button id="temp">Temp</button><button id="draw">Draw</button><button id="flag">Flag</button><button id="bunny">Bunny</button><button id="spur">Spur</button><button id="clear">Clear</button></p>
 <h1>Experience</h1>
 <h1>Attendance rate</h1>
+<table border="1" height="368" style="border-collapse: collapse; width: 123.168%; height: 488px;">
+<tbody>
+<tr style="height: 68px;">
+<td style="width: 41.9755%; height: 68px;"></td>
+<td style="width: 1.52439%; height: 68px;">week10</td>
+<td style="width: 10%; height: 68px;">week11</td>
+<td style="width: 10%; height: 68px;">week12</td>
+<td style="width: 10%; height: 68px;">week13</td>
+<td style="width: 10%; height: 68px;">week14</td>
+<td style="width: 10%; height: 68px;">week15</td>
+<td style="width: 10%; height: 68px;">week16</td>
+<td style="width: 10%; height: 68px;">week17</td>
+<td style="width: 10%; height: 68px;">week18</td>
+</tr>
+<tr style="height: 10px;">
+<td style="width: 41.9755%; height: 10px; text-align: center;">林靖浩</td>
+<td style="width: 1.52439%; height: 10px; text-align: center;">√</td>
+<td style="width: 10%; height: 10px; text-align: center;">√</td>
+<td style="width: 10%; height: 10px; text-align: center;">√</td>
+<td style="width: 10%; height: 10px; text-align: center;">√</td>
+<td style="width: 10%; height: 10px; text-align: center;">√</td>
+<td style="width: 10%; height: 10px; text-align: center;">√</td>
+<td style="width: 10%; height: 10px; text-align: center;">√</td>
+<td style="width: 10%; height: 10px;"></td>
+<td style="width: 10%; height: 10px;"></td>
+</tr>
+<tr style="height: 82px;">
+<td style="width: 41.9755%; height: 82px; text-align: center;">李冠廷</td>
+<td style="width: 1.52439%; height: 82px; text-align: center;">√<span style="color: #ff0000;"></span></td>
+<td style="width: 10%; height: 82px; text-align: center;">√<span style="color: #ff0000;"></span></td>
+<td style="width: 10%; height: 82px; text-align: center;">√<span style="color: #ff0000;"></span></td>
+<td style="width: 10%; height: 82px; text-align: center;">√<span style="color: #ff0000;"></span></td>
+<td style="width: 10%; height: 82px; text-align: center;">√<span style="color: #ff0000;"></span></td>
+<td style="width: 10%; height: 82px; text-align: center;">√<span style="color: #ff0000;"></span></td>
+<td style="width: 10%; height: 82px; text-align: center;">√<span style="color: #ff0000;"></span></td>
+<td style="width: 10%; height: 82px;"></td>
+<td style="width: 10%; height: 82px;"></td>
+</tr>
+<tr style="height: 82px;">
+<td style="width: 41.9755%; height: 82px; text-align: center;">廖豪樹</td>
+<td style="width: 1.52439%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px;"></td>
+<td style="width: 10%; height: 82px;"></td>
+</tr>
+<tr style="height: 82px;">
+<td style="width: 41.9755%; height: 82px; text-align: center;">劉光智</td>
+<td style="width: 1.52439%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px;"></td>
+<td style="width: 10%; height: 82px;"></td>
+</tr>
+<tr style="height: 82px;">
+<td style="width: 41.9755%; height: 82px; text-align: center;">蔡博宇</td>
+<td style="width: 1.52439%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px;"></td>
+<td style="width: 10%; height: 82px;"></td>
+</tr>
+<tr style="height: 82px;">
+<td style="width: 41.9755%; height: 82px; text-align: center;">簡國龍</td>
+<td style="width: 1.52439%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px; text-align: center;">√</td>
+<td style="width: 10%; height: 82px;"></td>
+<td style="width: 10%; height: 82px;"></td>
+</tr>
+</tbody>
+</table>
