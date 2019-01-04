@@ -724,10 +724,6 @@ def generate_pages():
     # index.html
     with open(_curdir + "\\content\\index.html", "w", encoding="utf-8") as f:
         f.write(get_page2(None, newhead, 0))
-    # search.html
-    with open(_curdir + "\\content\\search.html", "w", encoding="utf-8") as f:
-        directory = render_menu(head, level, page)
-        f.write(set_css() + "<div class='container'><nav>"+ directory + "</nav><section><h1>Search Result</h1><div id=\"tipue_search_content\"></div></section></div></body></html>")
     # sitemap
     with open(_curdir + "\\content\\sitemap.html", "w", encoding="utf-8") as f:
         # sitemap2 需要 newhead
@@ -1934,7 +1930,10 @@ $(function(){
     $("ul.topmenu > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
 });
 $(document).ready(function() {
-     $('#tipue_search_input').tipuesearch();
+     $('#tipue_search_input').tipuesearch({
+        newWindow: true,
+        minimumLength: 2,
+    });
 });
 </script>
 '''
