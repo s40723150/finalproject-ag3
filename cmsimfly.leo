@@ -767,7 +767,7 @@ def generate_pages():
         # 此一字串置換在 get_page2 中進行
         get_page_content = []
         html_doc = get_page2(newhead[i], newhead, 0, get_page_content)
-        soup = bs4.BeautifulSoup(" ".join(get_page_content), "lxml")
+        soup = bs4.BeautifulSoup(" ".join(get_page_content), "html.parser")
         search_content.append({"title": newhead[i], "text": " ".join(filter(visible, soup.findAll(text=True))), "tags": "", "url": newhead[i] + ".html"})
         with open(_curdir + "\\content\\" + newhead[i] + ".html", "w", encoding="utf-8") as f:
             # 增加以 newhead 作為輸入
