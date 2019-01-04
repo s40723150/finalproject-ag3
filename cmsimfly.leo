@@ -45,69 +45,69 @@
 </v>
 <v t="amd.20160714230833.1" a="E"><vh>編輯 flaskapp.py</vh>
 <v t="leo.20181104192450.1" a="E"><vh>@clean flaskapp.py</vh>
-<v t="leo.20181104192502.1"><vh>Declarations </vh></v>
-<v t="leo.20181104192502.2"><vh>checkLogin </vh></v>
-<v t="leo.20181104192502.3"><vh>delete_file </vh></v>
-<v t="leo.20181104192502.4"><vh>doDelete </vh></v>
-<v t="leo.20181104192502.5"><vh>doSearch </vh></v>
-<v t="leo.20181104192502.6"><vh>download </vh></v>
-<v t="leo.20181104192502.7"><vh>download_list </vh></v>
-<v t="leo.20181104192502.8"><vh>downloadlist_access_list </vh></v>
-<v t="leo.20181104192502.9"><vh>downloads </vh></v>
-<v t="leo.20181104192502.10"><vh>downloadselect_access_list </vh></v>
-<v t="leo.20181104192502.11"><vh>edit_config </vh></v>
-<v t="leo.20181104192502.12"><vh>edit_page </vh></v>
-<v t="leo.20181104192502.13"><vh>editorfoot </vh></v>
-<v t="leo.20181104192502.14"><vh>editorhead </vh></v>
-<v t="leo.20181104192502.15"><vh>error_log </vh></v>
-<v t="leo.20181104192502.16"><vh>file_get_contents </vh></v>
-<v t="leo.20181104192502.17"><vh>file_lister </vh></v>
-<v t="leo.20181104192502.18"><vh>file_selector </vh></v>
-<v t="leo.20181104192502.19"><vh>file_selector_script </vh></v>
-<v t="leo.20181104192502.20"><vh>fileaxupload </vh></v>
-<v t="leo.20181104192502.21"><vh>fileuploadform </vh></v>
-<v t="leo.20181104192502.22"><vh>flvplayer </vh></v>
-<v t="leo.20181104192502.23"><vh>generate_pages </vh></v>
-<v t="leo.20181104192502.24"><vh>get_page </vh></v>
-<v t="leo.20181104192502.25"><vh>get_page2 </vh></v>
-<v t="leo.20181104192502.26"><vh>image_delete_file </vh></v>
-<v t="leo.20181104192502.27"><vh>image_doDelete </vh></v>
-<v t="leo.20181104192502.28"><vh>image_list </vh></v>
-<v t="leo.20181104192502.29"><vh>imageaxupload </vh></v>
-<v t="leo.20181104192502.30"><vh>imagelist_access_list </vh></v>
-<v t="leo.20181104192502.31"><vh>imageselect_access_list </vh></v>
-<v t="leo.20181104192502.32"><vh>imageuploadform </vh></v>
-<v t="leo.20181104192502.33"><vh>index </vh></v>
-<v t="leo.20181104192502.34"><vh>isAdmin </vh></v>
-<v t="leo.20181104192502.35"><vh>listdir </vh></v>
-<v t="leo.20181104192502.36"><vh>load_list </vh></v>
-<v t="leo.20181104192502.37"><vh>loadlist_access_list </vh></v>
-<v t="leo.20181104192502.38"><vh>login </vh></v>
-<v t="leo.20181104192502.39"><vh>logout </vh></v>
-<v t="leo.20181104192502.40"><vh>parse_config </vh></v>
-<v t="leo.20181104192502.41"><vh>_remove_h123_attrs </vh></v>
-<v t="leo.20181104192502.42"><vh>parse_content </vh></v>
-<v t="leo.20181104192502.43"><vh>render_menu </vh></v>
-<v t="leo.20181104192502.44"><vh>render_menu2 </vh></v>
-<v t="leo.20181104192502.45"><vh>saveConfig </vh></v>
-<v t="leo.20181104192502.46"><vh>savePage </vh></v>
-<v t="leo.20181104192502.47"><vh>search_content </vh></v>
-<v t="leo.20181104192502.48"><vh>search_form </vh></v>
-<v t="leo.20181104192502.49"><vh>send_file </vh></v>
-<v t="leo.20181104192502.50"><vh>send_images </vh></v>
-<v t="leo.20181104192502.51"><vh>send_static </vh></v>
-<v t="leo.20181104192502.52"><vh>set_admin_css </vh></v>
-<v t="leo.20181104192502.53"><vh>set_css </vh></v>
-<v t="leo.20181104192502.54"><vh>set_css2 </vh></v>
-<v t="leo.20181104192502.55"><vh>set_footer </vh></v>
-<v t="leo.20181104192502.56"><vh>sitemap </vh></v>
-<v t="leo.20181104192502.57"><vh>sitemap2 </vh></v>
-<v t="leo.20181104192502.58"><vh>sizeof_fmt </vh></v>
-<v t="leo.20181104192502.59"><vh>ssavePage </vh></v>
-<v t="leo.20181104192502.60"><vh>syntaxhighlight </vh></v>
-<v t="leo.20181104192502.61"><vh>syntaxhighlight2 </vh></v>
-<v t="leo.20181104192502.62"><vh>tinymce_editor </vh></v>
-<v t="leo.20181104192502.63"><vh>unique </vh></v>
+<v t="leo.20181104192502.1"><vh>Declarations</vh></v>
+<v t="leo.20181104192502.2"><vh>checkLogin</vh></v>
+<v t="leo.20181104192502.3"><vh>delete_file</vh></v>
+<v t="leo.20181104192502.4"><vh>doDelete</vh></v>
+<v t="leo.20181104192502.5"><vh>doSearch</vh></v>
+<v t="leo.20181104192502.6"><vh>download</vh></v>
+<v t="leo.20181104192502.7"><vh>download_list</vh></v>
+<v t="leo.20181104192502.8"><vh>downloadlist_access_list</vh></v>
+<v t="leo.20181104192502.9"><vh>downloads</vh></v>
+<v t="leo.20181104192502.10"><vh>downloadselect_access_list</vh></v>
+<v t="leo.20181104192502.11"><vh>edit_config</vh></v>
+<v t="leo.20181104192502.12"><vh>edit_page</vh></v>
+<v t="leo.20181104192502.13"><vh>editorfoot</vh></v>
+<v t="leo.20181104192502.14"><vh>editorhead</vh></v>
+<v t="leo.20181104192502.15"><vh>error_log</vh></v>
+<v t="leo.20181104192502.16"><vh>file_get_contents</vh></v>
+<v t="leo.20181104192502.17"><vh>file_lister</vh></v>
+<v t="leo.20181104192502.18"><vh>file_selector</vh></v>
+<v t="leo.20181104192502.19"><vh>file_selector_script</vh></v>
+<v t="leo.20181104192502.20"><vh>fileaxupload</vh></v>
+<v t="leo.20181104192502.21"><vh>fileuploadform</vh></v>
+<v t="leo.20181104192502.22"><vh>flvplayer</vh></v>
+<v t="leo.20181104192502.23"><vh>generate_pages</vh></v>
+<v t="leo.20181104192502.24"><vh>get_page</vh></v>
+<v t="leo.20181104192502.25"><vh>get_page2</vh></v>
+<v t="leo.20181104192502.26"><vh>image_delete_file</vh></v>
+<v t="leo.20181104192502.27"><vh>image_doDelete</vh></v>
+<v t="leo.20181104192502.28"><vh>image_list</vh></v>
+<v t="leo.20181104192502.29"><vh>imageaxupload</vh></v>
+<v t="leo.20181104192502.30"><vh>imagelist_access_list</vh></v>
+<v t="leo.20181104192502.31"><vh>imageselect_access_list</vh></v>
+<v t="leo.20181104192502.32"><vh>imageuploadform</vh></v>
+<v t="leo.20181104192502.33"><vh>index</vh></v>
+<v t="leo.20181104192502.34"><vh>isAdmin</vh></v>
+<v t="leo.20181104192502.35"><vh>listdir</vh></v>
+<v t="leo.20181104192502.36"><vh>load_list</vh></v>
+<v t="leo.20181104192502.37"><vh>loadlist_access_list</vh></v>
+<v t="leo.20181104192502.38"><vh>login</vh></v>
+<v t="leo.20181104192502.39"><vh>logout</vh></v>
+<v t="leo.20181104192502.40"><vh>parse_config</vh></v>
+<v t="leo.20181104192502.41"><vh>_remove_h123_attrs</vh></v>
+<v t="leo.20181104192502.42"><vh>parse_content</vh></v>
+<v t="leo.20181104192502.43"><vh>render_menu</vh></v>
+<v t="leo.20181104192502.44"><vh>render_menu2</vh></v>
+<v t="leo.20181104192502.45"><vh>saveConfig</vh></v>
+<v t="leo.20181104192502.46"><vh>savePage</vh></v>
+<v t="leo.20181104192502.47"><vh>search_content</vh></v>
+<v t="leo.20181104192502.48"><vh>search_form</vh></v>
+<v t="leo.20181104192502.49"><vh>send_file</vh></v>
+<v t="leo.20181104192502.50"><vh>send_images</vh></v>
+<v t="leo.20181104192502.51"><vh>send_static</vh></v>
+<v t="leo.20181104192502.52"><vh>set_admin_css</vh></v>
+<v t="leo.20181104192502.53"><vh>set_css</vh></v>
+<v t="leo.20181104192502.54"><vh>set_css2</vh></v>
+<v t="leo.20181104192502.55"><vh>set_footer</vh></v>
+<v t="leo.20181104192502.56"><vh>sitemap</vh></v>
+<v t="leo.20181104192502.57"><vh>sitemap2</vh></v>
+<v t="leo.20181104192502.58"><vh>sizeof_fmt</vh></v>
+<v t="leo.20181104192502.59"><vh>ssavePage</vh></v>
+<v t="leo.20181104192502.60"><vh>syntaxhighlight</vh></v>
+<v t="leo.20181104192502.61"><vh>syntaxhighlight2</vh></v>
+<v t="leo.20181104192502.62"><vh>tinymce_editor</vh></v>
+<v t="leo.20181104192502.63"><vh>unique</vh></v>
 </v>
 </v>
 </vnodes>
@@ -263,7 +263,7 @@ bpm.kill(kind="http")
 <t tx="leo.20181104192450.1"># coding: utf-8
 @others
 if __name__ == "__main__":
-    app.run()
+    app.run(host='127.0.0.1', port=8080, debug=True)
 @language python
 @tabwidth -4
 </t>
@@ -401,8 +401,7 @@ def edit_page(edit):
 </t>
 <t tx="leo.20181104192502.14">def editorhead():
     return '''
-    &lt;br /&gt;
-&lt;!--&lt;script src="//cdn.tinymce.com/4/tinymce.min.js"&gt;&lt;/script&gt;--&gt;
+&lt;br /&gt;
 &lt;script src="/static/tinymce4/tinymce/tinymce.min.js"&gt;&lt;/script&gt;
 &lt;script src="/static/tinymce4/tinymce/plugins/sh4tinymce/plugin.min.js"&gt;&lt;/script&gt;
 &lt;link rel = "stylesheet" href = "/static/tinymce4/tinymce/plugins/sh4tinymce/style/style.css"&gt;
@@ -413,7 +412,7 @@ tinymce.init({
   element_format : "html",
   language : "en",
   valid_elements : '*[*]',
-  extended_valid_elements: "script[language|type|src]",
+  extended_valid_elements: "script[language|type|src|id]",
   plugins: [
     'advlist autolink lists link image charmap print preview hr anchor pagebreak',
     'searchreplace wordcount visualblocks visualchars code fullscreen',
@@ -742,23 +741,40 @@ def generate_pages():
         os.remove(os.path.join(_curdir + "\\content\\", f))
     # 這裡需要建立專門寫出 html 的 write_page
     # index.html
-    file = open(_curdir + "\\content\\index.html", "w", encoding="utf-8")
-    file.write(get_page2(None, newhead, 0))
-    file.close()
+    with open(_curdir + "\\content\\index.html", "w", encoding="utf-8") as f:
+        f.write(get_page2(None, newhead, 0))
+    # search.html
+    with open(_curdir + "\\content\\search.html", "w", encoding="utf-8") as f:
+        directory = render_menu(head, level, page)
+        f.write(set_css() + "&lt;div class='container'&gt;&lt;nav&gt;"+ directory + "&lt;/nav&gt;&lt;section&gt;&lt;h1&gt;Search Result&lt;/h1&gt;&lt;div id=\"tipue_search_content\"&gt;&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;")
     # sitemap
-    file = open(_curdir + "\\content\\sitemap.html", "w", encoding="utf-8")
-    # sitemap2 需要 newhead
-    file.write(sitemap2(newhead))
-    file.close()
+    with open(_curdir + "\\content\\sitemap.html", "w", encoding="utf-8") as f:
+        # sitemap2 需要 newhead
+        f.write(sitemap2(newhead))
     # 以下轉檔, 改用 newhead 數列
+
+    def visible(element):
+        if element.parent.name in ['style', 'script', '[document]', 'head', 'title']:
+            return False
+        elif re.match('&lt;!--.*--&gt;', str(element.encode('utf-8'))):
+            return False
+        return True
+
+    search_content = []
     for i in range(len(newhead)):
         # 在此必須要將頁面中的 /images/ 字串換為 images/, /downloads/ 換為 downloads/
         # 因為 Flask 中靠 /images/ 取檔案, 但是一般 html 則採相對目錄取檔案
         # 此一字串置換在 get_page2 中進行
-        file = open(_curdir + "\\content\\" + newhead[i] + ".html", "w", encoding="utf-8")
-        # 增加以 newhead 作為輸入
-        file.write(get_page2(newhead[i], newhead, 0))
-        file.close()
+        get_page_content = []
+        html_doc = get_page2(newhead[i], newhead, 0, get_page_content)
+        soup = bs4.BeautifulSoup(" ".join(get_page_content), "lxml")
+        search_content.append({"title": newhead[i], "text": " ".join(filter(visible, soup.findAll(text=True))), "tags": "", "url": newhead[i] + ".html"})
+        with open(_curdir + "\\content\\" + newhead[i] + ".html", "w", encoding="utf-8") as f:
+            # 增加以 newhead 作為輸入
+            f.write(html_doc)
+    # GENERATE js file
+    with open(_curdir + "\\content\\tipuesearch_content.js", "w", encoding="utf-8") as f:
+        f.write("var tipuesearch = {\"pages\": " + str(search_content) + "};")
     # generate each page html under content directory
     return "已經將網站轉為靜態網頁. &lt;a href='/'&gt;Home&lt;/a&gt;"
 # seperate page need heading and edit variables, if edit=1, system will enter edit mode
@@ -840,16 +856,27 @@ def get_page(heading, edit):
 @app.route('/get_page2/&lt;heading&gt;/&lt;int:edit&gt;')
 '''
 </t>
-<t tx="leo.20181104192502.25">def get_page2(heading, head, edit):
+<t tx="leo.20181104192502.25">def get_page2(heading, head, edit, get_page_content = None):
     not_used_head, level, page = parse_content()
     # 直接在此將 /images/ 換為 ./../images/, /downloads/ 換為 ./../downloads/, 以 content 為基準的相對目錄設定
-    page = [w.replace('/images/', './../images/') for w in page]
-    page = [w.replace('/downloads/', './../downloads/') for w in page]
+    new_page = []
+    for w in page:
+        new_page.append(
+            w.replace('/images/', './../images/')
+            .replace('/downloads/', './../downloads/')
+            # 假如有 src="/static/ace/則換為 src="./../static/ace/
+            .replace('src="/static/', 'src="./../static/')
+            # 假如有 pythonpath:['/static/'] 則換為 pythonpath:['./../static/']
+            .replace("pythonpath:['/static/']", "pythonpath:['./../static/']")
+        )
+    page = new_page
     directory = render_menu2(head, level, page)
     if heading is None:
         heading = head[0]
     # 因為同一 heading 可能有多頁, 因此不可使用 head.index(heading) 搜尋 page_order
     page_order_list, page_content_list = search_content(head, page, heading)
+    if get_page_content is not None:
+        get_page_content.extend(page_content_list)
     return_content = ""
     pagedata = ""
     outstring = ""
@@ -889,7 +916,7 @@ def get_page(heading, edit):
     # edit=0 for viewpage
     if edit == 0:
         return set_css2() + "&lt;div class='container'&gt;&lt;nav&gt;"+ \
-        directory + "&lt;/nav&gt;&lt;section&gt;" + return_content + "&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
+        directory + "&lt;/nav&gt;&lt;section&gt;&lt;div id=\"tipue_search_content\"&gt;" + return_content + "&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
     # enter edit mode
     else:
         # check if administrator
@@ -906,8 +933,6 @@ def get_page(heading, edit):
             #pagedata = "&lt;h" + level[page_order]+"&gt;" + heading + "&lt;/h" + level[page_order] + "&gt;" + search_content(head, page, heading)
             #outstring = last_page + " " + next_page + "&lt;br /&gt;" + tinymce_editor(directory, cgi.escape(pagedata), page_order)
                 return outstring
-
-
 </t>
 <t tx="leo.20181104192502.26">@app.route('/image_delete_file', methods=['POST'])
 def image_delete_file():
@@ -1245,7 +1270,9 @@ return 'images/';
 def index():
     head, level, page = parse_content()
     # fix first Chinese heading error
-    return redirect("/get_page/" + urllib.parse.quote_plus(head[0]))
+    # 2018.12.13, 將空白轉為"+" 號, 會導致連線錯誤, 改為直接取頁面標題
+    #return redirect("/get_page/" + urllib.parse.quote_plus(head[0], encoding="utf-8"))
+    return redirect("/get_page/" + head[0])
     # the following will never execute
     directory = render_menu(head, level, page)
     if heading is None:
@@ -1704,7 +1731,7 @@ def doDelete():
     if sitemap:
         directory += "&lt;ul&gt;"
     else:
-        directory += "&lt;ul id='css3menu1' class='topmenu'&gt;"
+        directory += "&lt;ul id='css3menu1' class='topmenu'&gt;&lt;div class=\"tipue_search_group\"&gt;&lt;input style=\"width: 6vw;\" type=\"text\" name=\"q\" id=\"tipue_search_input\" pattern=\".{3,}\" title=\"Press enter key to search\" required&gt;&lt;/div&gt;"
     for index in range(len(head)):
         this_level = level[index]
         # 若處理中的層級比上一層級高超過一層, 則將處理層級升級 (處理 h1 後直接接 h3 情況)
@@ -1894,8 +1921,6 @@ def doSearch():
                    directory + "&lt;/nav&gt;&lt;section&gt;&lt;h1&gt;Search Result&lt;/h1&gt;keyword: " + \
                    keyword.lower() + "&lt;br /&gt;&lt;br /&gt;in the following pages:&lt;br /&gt;&lt;br /&gt;" + \
                    match + "&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
-
-
 </t>
 <t tx="leo.20181104192502.50">@app.route('/images/&lt;path:path&gt;')
 def send_images(path):
@@ -1918,7 +1943,7 @@ def send_static():
     outstring = '''&lt;!doctype html&gt;
 &lt;html&gt;&lt;head&gt;
 &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
-&lt;title&gt;期末分組專案&lt;/title&gt; \
+&lt;title&gt;''' + init.Init.site_title + '''&lt;/title&gt; \
 &lt;link rel="stylesheet" type="text/css" href="/static/cmsimply.css"&gt;
 ''' + syntaxhighlight()
 
@@ -1970,7 +1995,7 @@ window.location= 'https://' + location.host + location.pathname + location.searc
     outstring = '''&lt;!doctype html&gt;
 &lt;html&gt;&lt;head&gt;
 &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
-&lt;title&gt;期末分組專案&lt;/title&gt; \
+&lt;title&gt;''' + init.Init.site_title + '''&lt;/title&gt; \
 &lt;link rel="stylesheet" type="text/css" href="/static/cmsimply.css"&gt;
 ''' + syntaxhighlight()
 
@@ -2028,16 +2053,23 @@ window.location= 'https://' + location.host + location.pathname + location.searc
     outstring = '''&lt;!doctype html&gt;
 &lt;html&gt;&lt;head&gt;
 &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
-&lt;title&gt;期末分組專案&lt;/title&gt; \
+&lt;title&gt;''' + init.Init.site_title + '''&lt;/title&gt; \
 &lt;link rel="stylesheet" type="text/css" href="./../static/cmsimply.css"&gt;
+&lt;script src="tipuesearch_content.js"&gt;&lt;/script&gt;
+&lt;script src="./../static/jquery.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="./../static/tipuesearch/css/tipuesearch.css"&gt;
+&lt;script src="./../static/tipuesearch/tipuesearch_set.js"&gt;&lt;/script&gt;
+&lt;script src="./../static/tipuesearch/tipuesearch.min.js"&gt;&lt;/script&gt;
 ''' + syntaxhighlight2()
 
     outstring += '''
-&lt;script src="./../static/jquery.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript"&gt;
 $(function(){
     $("ul.topmenu&gt; li:has(ul) &gt; a").append('&lt;div class="arrow-right"&gt;&lt;/div&gt;');
     $("ul.topmenu &gt; li ul li:has(ul) &gt; a").append('&lt;div class="arrow-right"&gt;&lt;/div&gt;');
+});
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch();
 });
 &lt;/script&gt;
 '''
@@ -2057,8 +2089,6 @@ window.location= 'https://' + location.host + location.pathname + location.searc
 &lt;li&gt;&lt;a href="sitemap.html"&gt;Site Map&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="./../reveal/index.html"&gt;reveal&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="./../blog/index.html"&gt;blog&lt;/a&gt;&lt;/li&gt;
-'''
-    outstring += '''
 &lt;/ul&gt;
 &lt;/confmenu&gt;&lt;/header&gt;
 '''
@@ -2068,15 +2098,7 @@ window.location= 'https://' + location.host + location.pathname + location.searc
 </t>
 <t tx="leo.20181104192502.55">def set_footer():
     """footer for page"""
-    return "&lt;footer&gt; \
-        &lt;a href='/edit_page'&gt;Edit All&lt;/a&gt;| \
-        &lt;a href='" + str(request.url) + "/1'&gt;Edit&lt;/a&gt;| \
-        &lt;a href='edit_config'&gt;Config&lt;/a&gt; \
-        &lt;a href='login'&gt;login&lt;/a&gt;| \
-        &lt;a href='logout'&gt;logout&lt;/a&gt; \
-        &lt;br /&gt;Powered by &lt;a href='http://cmsimple.cycu.org'&gt;CMSimply&lt;/a&gt; \
-        &lt;/footer&gt; \
-        &lt;/body&gt;&lt;/html&gt;"
+    return "&lt;footer&gt;&lt;a href='/edit_page'&gt;Edit All&lt;/a&gt;|&lt;a href='" + str(request.url) + "/1'&gt;Edit&lt;/a&gt;|&lt;a href='edit_config'&gt;Config&lt;/a&gt;&lt;a href='login'&gt;login&lt;/a&gt;|&lt;a href='logout'&gt;logout&lt;/a&gt;&lt;br /&gt;Powered by &lt;a href='http://cmsimple.cycu.org'&gt;CMSimply&lt;/a&gt;&lt;/footer&gt;&lt;/body&gt;&lt;/html&gt;"
 </t>
 <t tx="leo.20181104192502.56">@app.route('/sitemap', defaults={'edit': 1})
 @app.route('/sitemap/&lt;path:edit&gt;')
@@ -2214,6 +2236,14 @@ def download():
 &lt;script src="https://scrum-3.github.io/web/brython/brython.js"&gt;&lt;/script&gt;
 &lt;script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"&gt;&lt;/script&gt;
 --&gt;
+&lt;style&gt;
+img.red3border {
+    border: 3px solid red;
+}
+.black3border {
+    border: 3px solid black;
+}
+&lt;/style&gt;
 '''
 
 
@@ -2267,6 +2297,14 @@ init_mathjax();
 &lt;script src="https://scrum-3.github.io/web/brython/brython.js"&gt;&lt;/script&gt;
 &lt;script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"&gt;&lt;/script&gt;
 --&gt;
+&lt;style&gt;
+img.red3border {
+    border: 3px solid red;
+}
+.black3border {
+    border: 3px solid black;
+}
+&lt;/style&gt;
 '''
 
 
@@ -2311,6 +2349,34 @@ init_mathjax();
             keep.append(str(item) + "_" + str(count[item]))
     return keep
 
+
+@app.route('/edit_report')
+def edit_report():
+    head, level, page = parse_content()
+    directory = render_menu(head, level, page)
+    dir = "./report/markdown/paragraph"
+    outstring = ""
+    files = os.listdir(dir)
+    for i in range(len(files)):
+        outstring += "Edit: &lt;a href='/do_edit_report/" + str(files[i]) +"'&gt;" + str(files[i]) + "&lt;/a&gt;"
+        outstring += "&lt;br /&gt;"
+    #output = '&lt;br /&gt;'.join(map(str, files))
+    return set_css() + "&lt;div class='container'&gt;&lt;nav&gt;" + \
+             directory + "&lt;/nav&gt;&lt;section&gt;" + outstring + "&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
+
+@app.route('/do_edit_report/&lt;file_name&gt;')
+def do_edit_report(file_name):
+    if file_name is None:
+        pass
+    head, level, page = parse_content()
+    directory = render_menu(head, level, page)
+    dir = "./report/markdown/paragraph"
+    filename = dir + "/" + file_name
+    file_content = file_get_contents(filename)
+    outstring = ""
+    outstring += file_content
+    return set_css() + "&lt;div class='container'&gt;&lt;nav&gt;" + \
+             directory + "&lt;/nav&gt;&lt;section&gt;" + outstring + "&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
 
 </t>
 <t tx="leo.20181104192502.7">@app.route('/download_list', methods=['GET'])
