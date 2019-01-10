@@ -1,0 +1,136 @@
+<!doctype html>
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>Python-Course</title> <link rel="stylesheet" type="text/css" href="./../static/cmsimply.css">
+<script src="tipuesearch_content.js"></script>
+<script src="./../static/jquery.js"></script>
+<link rel="stylesheet" href="./../static/tipuesearch/css/tipuesearch.css">
+<script src="./../static/tipuesearch/tipuesearch_set.js"></script>
+<script src="./../static/tipuesearch/tipuesearch.min.js"></script>
+
+<script type="text/javascript" src="./../static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCSharp.js"></script>
+<link type="text/css" rel="stylesheet" href="./../static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<!-- for LaTeX equations 暫時不用
+<script src="https://scrum-3.github.io/web/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+-->
+<!-- 暫時不用
+<script src="./../static/fengari-web.js"></script>
+<script type="text/javascript" src="./../static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.red3border {
+    border: 3px solid red;
+}
+.black3border {
+    border: 3px solid black;
+}
+</style>
+
+<script type="text/javascript">
+$(function(){
+    $("ul.topmenu> li:has(ul) > a").append('<div class="arrow-right"></div>');
+    $("ul.topmenu > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
+});
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch({
+        newWindow: true,
+        minimumLength: 2,
+    });
+});
+</script>
+
+</head><header><h1>2018 Fall demo 期末分組網站-ag3</h1> <confmenu>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="sitemap.html">Site Map</a></li>
+<li><a href="./../reveal/index.html">reveal</a></li>
+<li><a href="./../blog/index.html">blog</a></li>
+</ul>
+</confmenu></header>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><div class="tipue_search_group"><input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="Press enter key to search" required></div><li><a href='Introduction.html'>Introduction</a><li><a href='Topic.html'>Topic</a><li><a href='Synopsis.html'>Synopsis</a><ul><li><a href='Beautiful soup.html'>Beautiful soup</a><li><a href='TinyMCE4.html'>TinyMCE4</a></li></ul><li><a href='Python 語法.html'>Python 語法</a><li><a href='Experience.html'>Experience</a><ul><li><a href='W10.html'>W10</a><li><a href='W11.html'>W11</a><li><a href='W12.html'>W12</a><li><a href='W13.html'>W13</a><li><a href='W14.html'>W14</a><li><a href='W15.html'>W15</a><li><a href='W16.html'>W16</a><li><a href='W17.html'>W17</a></li></ul><li><a href='Attendance rate.html'>Attendance rate</a></li></ul></nav><section><div id="tipue_search_content">Beautiful soup << <a href='Beautiful soup.html'>Previous</a> <a href='Python 語法.html'>Next</a> >> Python 語法<br /><h1>TinyMCE4</h1>
+<p>TinyMCE4 是一個可以網路應用上的文字編輯器</p>
+<p>如何將 TinyMCE4 崁入?</p>
+<p>Step 1 :  插入 TinyMCE4 的腳本</p>
+<p><span></span><code class="highlighter-rouge">&lt;head&gt;</code><span>在HTML頁面中插入這行程式</span><span>碼並鏈接到 tinymce.min.js 文件：</span></p>
+<div class="language-html highlighter-rouge">
+<div class="highlight">
+<pre class="prettyprint prettyprinted"><code></code></pre>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="./../static/tinymce4/tinymce/tinymce.min.js"&gt;&lt;/script&gt;</pre>
+<pre class="prettyprint prettyprinted">Tips：Step 2 包含 HTML 完整的程式碼。</pre>
+<p>Step 2 : 將 TinyMCE 初始化為 Web 表單的一部分</p>
+<pre class="prettyprint prettyprinted"></pre>
+</div>
+</div>
+<p><span>使用包含的腳本，在網頁中的任何元素（或元素）上初始化 TinyMCE。</span></p>
+<p>由於 TinyMCE 允許通過 CSS 選擇器識別可替換元素，因此唯一的要求是傳遞包含選擇的對象 tinymce.init(  )。</p>
+<p><span>在這個例子中，取代 </span></p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">&lt;textarea id='mytextarea'&gt;</pre>
+<p><span>由選擇通過與 TinyMCE 的編輯器實例</span></p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">'#mytextarea'</pre>
+<p><span>來</span><code class="highlighter-rouge">tinymce.init()</code><span>。</span></p>
+<div class="language-html highlighter-rouge">
+<div class="highlight">
+<pre class="prettyprint prettyprinted"><code></code></pre>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src='http://cloud.tinymce.com/5-testing/tinymce.min.js'&gt;&lt;/script&gt;
+  &lt;script&gt;
+  tinymce.init({
+    selector: '#mytextarea'
+  });
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;h1&gt;TinyMCE Quick Start Guide&lt;/h1&gt;
+  &lt;form method="post"&gt;
+    &lt;textarea id="mytextarea"&gt;Hello, World!&lt;/textarea&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+</div>
+<p><span>Step 3 : 用 POST 表單儲存內容</span></p>
+<p>當&lt;form&gt;被提交後，TinyMCE 的編輯器模仿一個普通的 HTML 行為  &lt;textarea&gt; 過程中 <code class="highlighter-rouge">POST</code> 。在用戶的表單處理程序中，提交的內容可以與從常規創建的內容相同的方式處理  &lt;textarea&gt; 。</p>
+<p><span>這就是它的全部！</span></p>
+<p><span>要下載 TinyMCE 並在本地</span><span>安裝</span><span>，“ </span><span>簡介和入門</span><span>指南” 中的“ 高級安裝選擇”頁面有說明。本文檔還提供了有關 TinyMCE 功能的信息，例如高級安裝選項，使用插件，學習內容過濾和拼寫檢查。</span></p>
+<p>資料來源 :  <a href="https://www.tiny.cloud/">TinyMCE</a></p>
+<br />Beautiful soup << <a href='Beautiful soup.html'>Previous</a> <a href='Python 語法.html'>Next</a> >> Python 語法</div></section></div></body></html>
