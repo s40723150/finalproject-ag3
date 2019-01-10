@@ -13,16 +13,16 @@
 <v t="amd.20160714225308.2"><vh>@data qt-gui-plugin-style-sheet</vh></v>
 <v t="amd.20160714225308.3"><vh>@string initial_split_orientation = horizontal</vh></v>
 </v>
-<v t="leo.20180702145534.1" a="E"><vh>wsgi start/stop</vh>
+<v t="leo.20180702145534.1"><vh>wsgi start/stop</vh>
 <v t="leo.20180702142719.1"><vh>@button start wsgi</vh></v>
 <v t="leo.20180702142849.1"><vh>@button stop wsgi</vh></v>
 </v>
-<v t="leo.20180702145555.1" a="E"><vh>http start/stop</vh>
+<v t="leo.20180702145555.1"><vh>http start/stop</vh>
 <v t="leo.20180702145442.1"><vh>@button start http.server</vh></v>
 <v t="leo.20180702145458.1"><vh>@button stop http.server</vh></v>
 </v>
 <v t="leo.20180703102027.1"><vh>@edit README.md</vh></v>
-<v t="amd.20160714225245.2" a="E"><vh>about cmsimfly</vh>
+<v t="amd.20160714225245.2"><vh>about cmsimfly</vh>
 <v t="amd.20160714230137.1"><vh>@edit .gitignore</vh></v>
 <v t="amd.20160714230155.1"><vh>@edit LICENSE</vh></v>
 </v>
@@ -33,14 +33,14 @@
 <v t="leo.20180625155248.1"><vh>@edit pybean.py</vh></v>
 <v t="leo.20180625155728.1"><vh>@edit schema.sql</vh></v>
 <v t="amd.20160718130611.1"><vh>@edit .gitignore</vh></v>
-<v t="amd.20160717222221.1"><vh>@path static</vh>
+<v t="amd.20160717222221.1" a="E"><vh>@path static</vh>
 <v t="leo.20180718091411.1"><vh>@edit cmsimply.css</vh></v>
 <v t="amd.20160717222242.1"><vh>@edit axuploader.js</vh></v>
 <v t="amd.20160718125932.1"><vh>@edit viewstl.html</vh></v>
 <v t="amd.20160718125943.1"><vh>@edit stlviewer.js</vh></v>
 <v t="amd.20160718212341.1"><vh>@edit jsc3d.js</vh></v>
 </v>
-<v t="amd.20160714230058.1" a="E"><vh>@clean wsgi.py</vh>
+<v t="amd.20160714230058.1"><vh>@clean wsgi.py</vh>
 <v t="amd.20160714230122.1"><vh>wsgi declarations</vh></v>
 </v>
 <v t="amd.20160714230833.1" a="E"><vh>編輯 flaskapp.py</vh>
@@ -743,10 +743,6 @@ def generate_pages():
     # index.html
     with open(_curdir + "\\content\\index.html", "w", encoding="utf-8") as f:
         f.write(get_page2(None, newhead, 0))
-    # search.html
-    with open(_curdir + "\\content\\search.html", "w", encoding="utf-8") as f:
-        directory = render_menu(head, level, page)
-        f.write(set_css() + "&lt;div class='container'&gt;&lt;nav&gt;"+ directory + "&lt;/nav&gt;&lt;section&gt;&lt;h1&gt;Search Result&lt;/h1&gt;&lt;div id=\"tipue_search_content\"&gt;&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;")
     # sitemap
     with open(_curdir + "\\content\\sitemap.html", "w", encoding="utf-8") as f:
         # sitemap2 需要 newhead
@@ -767,7 +763,7 @@ def generate_pages():
         # 此一字串置換在 get_page2 中進行
         get_page_content = []
         html_doc = get_page2(newhead[i], newhead, 0, get_page_content)
-        soup = bs4.BeautifulSoup(" ".join(get_page_content), "lxml")
+        soup = bs4.BeautifulSoup(" ".join(get_page_content), "html.parser")
         search_content.append({"title": newhead[i], "text": " ".join(filter(visible, soup.findAll(text=True))), "tags": "", "url": newhead[i] + ".html"})
         with open(_curdir + "\\content\\" + newhead[i] + ".html", "w", encoding="utf-8") as f:
             # 增加以 newhead 作為輸入
@@ -2069,7 +2065,10 @@ $(function(){
     $("ul.topmenu &gt; li ul li:has(ul) &gt; a").append('&lt;div class="arrow-right"&gt;&lt;/div&gt;');
 });
 $(document).ready(function() {
-     $('#tipue_search_input').tipuesearch();
+     $('#tipue_search_input').tipuesearch({
+        newWindow: true,
+        minimumLength: 2,
+    });
 });
 &lt;/script&gt;
 '''
